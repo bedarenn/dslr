@@ -2,7 +2,6 @@
 
 from .read import read
 from .str_data import str_data
-from .scatter_plot import scatter_plot
 
 from .stat import \
     get_count, get_mean, \
@@ -14,8 +13,6 @@ __all__ = [
     'read',
 
     'str_data',
-
-    'scatter_plot',
 
     'get_count', 'get_mean',
     'get_min', 'get_max',

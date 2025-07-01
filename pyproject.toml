@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dslr"
+version = "0.1.0"
+description = "A data science library"
+authors = [{name = "bedarenn"}]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
