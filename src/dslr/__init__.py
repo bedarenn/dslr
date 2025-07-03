@@ -8,6 +8,8 @@ from .stat import \
     get_min, get_max, \
     get_median, get_quartile_1, get_quartile_3
 
+from .histogram import plt_hist
+
 __all__ = [
 
     'read',
@@ -16,6 +18,7 @@ __all__ = [
 
     'get_count', 'get_mean',
     'get_min', 'get_max',
-    'get_median', 'get_quartile_1', 'get_quartile_3'
+    'get_median', 'get_quartile_1', 'get_quartile_3',
 
+    'plt_hist'
 ]
