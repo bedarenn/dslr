@@ -40,13 +40,13 @@ def str_data(df: pd.DataFrame, size: int = SIZE) -> str:
     text += "Min".rjust(size) + "  " + \
         write_line(cols, name, get_min, size=size) + "\n"
     text += "25%".rjust(size) + "  " + \
-        write_line(cols, name, get_quartile_3, size=size) + "\n"
+        write_line(cols, name, get_quartile_1, size=size) + "\n"
     text += "50%".rjust(size) + "  " + \
         write_line(cols, name, get_median, size=size) + "\n"
     text += "75%".rjust(size) + "  " + \
-        write_line(cols, name, get_quartile_1, size=size) + "\n"
+        write_line(cols, name, get_quartile_3, size=size) + "\n"
     text += "Max".rjust(size) + "  " + \
-        write_line(cols, name, get_max, size=size) + "\n"
+        write_line(cols, name, get_max, size=size)
 
     return (text)
 
@@ -66,4 +66,5 @@ def write_line(df: dict, name: list[str],
     for i in name:
         s = f"{func(df[i]): {size}.2f}"
         text += f"{s[:size].rjust(size)}  "
+
     return (text)

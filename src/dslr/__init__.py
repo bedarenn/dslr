@@ -9,6 +9,8 @@ from .stat import \
     get_median, get_quartile_1, get_quartile_3
 
 from .histogram import plt_hist
+from .scatter_plot import plt_scatter
+from .pair_plot import plt_matrix
 
 __all__ = [
 
@@ -20,5 +22,6 @@ __all__ = [
     'get_min', 'get_max',
     'get_median', 'get_quartile_1', 'get_quartile_3',
 
-    'plt_hist'
+    'plt_hist', 'plt_scatter', 'plt_matrix'
+
 ]

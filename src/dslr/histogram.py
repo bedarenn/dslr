@@ -2,11 +2,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
-colors = ['red', 'blue', 'yellow', 'green']
+HOUSES = {
+    'Gryffindor': 'red',
+    'Hufflepuff': 'blue',
+    'Ravenclaw': 'yellow',
+    'Slytherin': 'green'
+}
 
 
-def plt_hist(df: pd.DataFrame, course: str) -> None:
+def plt_hist(df: pd.DataFrame, course: str,
+             header='Hogwarts House', fam=HOUSES) -> None:
     """
     Plot an histogram of a course.
     """
@@ -19,9 +24,11 @@ def plt_hist(df: pd.DataFrame, course: str) -> None:
     plt.figure(figsize=(8, 4.5))
     plt.grid(True)
 
-    for i, j in zip(houses, colors):
-        tab = df[df['Hogwarts House'] == i][course].dropna()
-        plt.hist(tab, bins=10, label=i, color=j, edgecolor='black', alpha=0.2)
+    for key, value in fam.items():
+        tab = df[df[header] == key][course].dropna()
+        plt.hist(tab, bins=10,
+                 label=key, color=value, edgecolor='black',
+                 alpha=0.2)
 
     plt.title(course)
     plt.xlabel('Score')
